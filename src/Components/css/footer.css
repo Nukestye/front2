@@ -1,0 +1,5 @@
+.footer {
+    display: flex;
+
+    border: 2px red solid;
+}

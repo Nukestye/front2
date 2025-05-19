@@ -1,0 +1,36 @@
+@import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
+
+:root {
+    --white-green: #EDFFEE;
+    --plum: #AB81CD;
+}
+
+body, html {
+    height: 100%;
+    background-color: #2A2B2A;
+    font-family: 'JetBrains Mono', sans-serif;
+    margin: 0px;
+    color: var(--white-green);
+}
+
+.max-h {
+    height: 100%;
+}
+
+.max-w {
+    width: 90ch;
+}
+
+a {
+    text-decoration: none;
+    text-decoration: underline dotted var(--plum) 2px;
+    text-underline-offset: 2px;
+    transition: 0.5s;
+    color: inherit;
+}
+
+a:hover {
+    background: var(--plum);
+    transition: 0.5s;
+}
+
