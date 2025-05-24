@@ -3,6 +3,7 @@
 :root {
     --white-green: #EDFFEE;
     --plum: #AB81CD;
+    --body-width: 90ch;
 }
 
 body, html {
@@ -18,7 +19,12 @@ body, html {
 }
 
 .max-w {
-    width: 90ch;
+    width: var(--body-width);
+}
+
+.m-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a {
@@ -48,14 +54,11 @@ a {
     transition: 0.5s;
 }
 
-
 .link-num {
     color: white !important;
     text-decoration: none !important;
 
-
     background-color: grey;
     border-radius: 5px;
     padding: 2.5px;
-
 }

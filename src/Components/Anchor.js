@@ -1,5 +1,7 @@
-import { click } from "@testing-library/user-event/dist/click";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+
+// DEBUG FILES
+import common from '../util/common.json';
 
 function Link({href, message, openNewTab = false}) {
 
@@ -10,10 +12,16 @@ function Link({href, message, openNewTab = false}) {
         openNewTab ? setTarget('_blank') : setTarget('_self')
     }, [openNewTab])
 
+    useEffect(() => {
+        // TODO: Add support to track clicked amount.
+        // Fetch API to correctly label each link
+        setClickedAmount(clickedAmount)
+        if (common.dev.CONSOLE_DEBUG) console.log('[REACT][LINK] Fetching API');
 
+    }, [clickedAmount])
 
     return (
-        <div className="link-holder">
+        <div id="a" className="link-holder">
             <a className='link' onClick={() => {setClickedAmount(clickedAmount + 1)}} href={href} target={target} >{message}</a>
             &nbsp;
             <span className="link-num">{clickedAmount}</span>

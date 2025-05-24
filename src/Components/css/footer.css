@@ -1,5 +1,48 @@
-.footer {
-    display: flex;
+:root {
+    --footer-gap: 30px;
+}
 
-    border: 2px red solid;
+.footer {
+    /* border: 2px red solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.footer > .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--body-width);
+}
+
+.social-buttons {
+    display: inline-flex;
+    width: auto;
+    margin-right: 30px;
+}
+
+.social-buttons a {
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer > hr {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.copyright {
+    margin-left: var(--footer-gap);
+}
+
+.version {
+    margin-right: var(--footer-gap);
+}
+
+.version > a {
+    text-decoration: none;
+    color: inherit;
 }

@@ -1,0 +1,14 @@
+{
+    "flag": "dev",
+    "prod": {
+        "repo" : "https://www.github.com/Nukestye/front",
+        "socials": {
+            "github": "https://www.github.com/Nukestye/",
+            "linkedin": "https://www.linkedin.com/in/goharhayat/",
+            "twitter": "https://twitter.com/nukestye"
+        }
+    },
+    "dev": {
+        "CONSOLE_DEBUG": true
+    }
+}
