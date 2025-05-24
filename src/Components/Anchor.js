@@ -6,7 +6,7 @@ import common from '../util/common.json';
 function Link({href, message, openNewTab = false}) {
 
     const [target, setTarget] = useState('_blank');
-    const [clickedAmount, setClickedAmount] = useState(0);
+    const [clickedAmount, setClickedAmount] = useState('0');
 
     useEffect(() => {
         openNewTab ? setTarget('_blank') : setTarget('_self')
@@ -22,9 +22,7 @@ function Link({href, message, openNewTab = false}) {
 
     return (
         <div id="a" className="link-holder">
-            <a className='link' onClick={() => {setClickedAmount(clickedAmount + 1)}} href={href} target={target} >{message}</a>
-            &nbsp;
-            <span className="link-num">{clickedAmount}</span>
+            <a className='link underline' onClick={() => {setClickedAmount(clickedAmount + 1)}} href={href} data-clicks={clickedAmount} target={target} >{message}</a>
         </div>
     )
 }

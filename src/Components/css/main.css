@@ -4,6 +4,7 @@
     --white-green: #EDFFEE;
     --plum: #AB81CD;
     --body-width: 90ch;
+    --white-smoke: #EDE9EA;
 }
 
 body, html {
@@ -29,6 +30,7 @@ body, html {
 
 a {
     text-decoration: none;
+    color: var(--white-green)
 }
 
 .link-holder {
@@ -37,15 +39,13 @@ a {
 
 .link {
     text-decoration: none;
-    text-decoration: underline dotted var(--plum) 2px;
-    text-underline-offset: 5px;
+    position: relative;
     transition: 0.5s;
     color: inherit;
 }
 
 .link:visited {
     color: var(--plum);
-    /* color: red; */
 }
 
 .link:hover {
@@ -54,11 +54,24 @@ a {
     transition: 0.5s;
 }
 
-.link-num {
-    color: white !important;
-    text-decoration: none !important;
+.link::after {
+    content: attr(data-clicks);
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+    font-weight: normal;
 
-    background-color: grey;
-    border-radius: 5px;
-    padding: 2.5px;
+    color: grey;
+    background-color: var(--white-smoke);
+    padding: .05em .3em;
+
+}
+
+.underline {
+    text-decoration: underline dotted var(--plum) 2px;
+    text-underline-offset: 3px;
+}
+
+.underline::after {
+    text-decoration: none;
 }
