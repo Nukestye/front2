@@ -1,0 +1,27 @@
+.intro {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.plum {
+    --plum: #AB81CD;
+    color: var(--plum);
+}
+
+
+.intro-text-start {
+    font-size: 70px;
+    margin-bottom: .3em;
+}
+
+.intro-text-mid {
+    font-size: 32px;
+    margin: 0em;
+}
+
+.intro-text-end {
+    margin: .2em;
+}
