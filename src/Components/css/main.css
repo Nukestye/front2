@@ -23,14 +23,39 @@ body, html {
 
 a {
     text-decoration: none;
+}
+
+.link-holder {
+    display: inline;
+}
+
+.link {
+    text-decoration: none;
     text-decoration: underline dotted var(--plum) 2px;
-    text-underline-offset: 2px;
+    text-underline-offset: 5px;
     transition: 0.5s;
     color: inherit;
 }
 
-a:hover {
+.link:visited {
+    color: var(--plum);
+    /* color: red; */
+}
+
+.link:hover {
     background: var(--plum);
+    color: var(--white-green);
     transition: 0.5s;
 }
 
+
+.link-num {
+    color: white !important;
+    text-decoration: none !important;
+
+
+    background-color: grey;
+    border-radius: 5px;
+    padding: 2.5px;
+
+}
