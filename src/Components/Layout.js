@@ -9,11 +9,11 @@ import './css/layout.css';
 function Layout() {
 
     return (
-        <div className="main-content">
+        <div className="main-content max-h max-w m-auto">
             <Navbar />
 
             <Outlet />
-
+            
             <Footer />
         </div>
     )

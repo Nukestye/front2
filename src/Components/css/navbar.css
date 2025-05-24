@@ -1,0 +1,38 @@
+:root {
+    --plum: #AB81CD;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 32px;
+}
+
+.prefix {
+    color: grey;
+}
+
+.navbar-content > ul {
+    list-style-type: none;
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+
+}
+
+.navbar-items {
+    padding: 5px;
+    font-size: 19px;
+    color: inherit;
+    transition: .3s ease-in-out;
+}
+
+.navbar-items:hover {
+    color: var(--plum);
+    transition: .3s ease-in-out;
+}

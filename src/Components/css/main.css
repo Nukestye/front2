@@ -15,6 +15,10 @@ body, html {
     color: var(--white-green);
 }
 
+#root {
+    height: 100%;
+}
+
 .max-h {
     height: 100%;
 }
@@ -74,4 +78,9 @@ a {
 
 .underline::after {
     text-decoration: none;
+}
+
+.container {
+    margin-left: 2em;
+    margin-right: 2em;
 }
