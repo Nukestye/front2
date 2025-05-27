@@ -1,9 +1,12 @@
 
-// CSS
-import './Components/css/main.css';
-import './Components/css/home.css';
+import Anchor from './Anchor.js';
 
-import logo from './assests/logo3.png';
+// CSS
+import './css/main.css';
+import './css/home.css';
+
+
+import logo from '../assests/logo3.png';
 
 function Home() {
   return (

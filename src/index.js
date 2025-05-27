@@ -1,13 +1,12 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Home from './Home.js';
+import Home from './Components/Home.js';
 import Layout from './Components/Layout.js';
 
 import Projects from './Components/Projects.js';
 import Blogs from './Components/Blogs.js';
 import Error from './Components/Error.js';
-
 
 const router = createBrowserRouter([
   {
