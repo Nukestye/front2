@@ -30,7 +30,9 @@ function Home() {
       <img src={logo} height={256} width={256} alt='cat shaped letter g'/>
 
       </div>
-      <div></div>
+      <div>
+      
+      </div>
       <div></div>
     </div>
   );

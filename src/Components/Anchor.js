@@ -9,9 +9,6 @@ function Link({href, message, openNewTab = false}) {
     const [clickedAmount, setClickedAmount] = useState('0');
     const [anchorId, setAnchorID] = useState('');
 
-    // Should only run once
-    // Create a unique id that will be used
-    // to store the number of times its clicked.
     useEffect(() => {
         fetch(`http://${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/anchor/create-id`, 
             {
@@ -24,6 +21,9 @@ function Link({href, message, openNewTab = false}) {
             .then(json => {
                 if (common.dev.CONSOLE_DEBUG) console.log(`[REACT][LINK] ID GEN: ${json['id']}`);
                 setAnchorID(json['id'])
+            })
+            .catch(error => {
+                if (common.dev.CONSOLE_DEBUG) console.error(`[REACT][Link] ID GEN ERR: ${error}`);
             });
 
     }, [href, message]);
@@ -33,10 +33,6 @@ function Link({href, message, openNewTab = false}) {
         openNewTab ? setTarget('_blank') : setTarget('_self')
     }, [openNewTab]);
 
-    // TODO: Link tracking 
-    // each time the link is clicked
-    // it should update in db
-    // could be intensive ??
     useEffect(() => {
 
         fetch(`http://${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/anchor/get-count`, 
@@ -45,12 +41,14 @@ function Link({href, message, openNewTab = false}) {
                 headers: new Headers({'content-type': 'application/json'}),
                 body: JSON.stringify({id: anchorId, count: clickedAmount}),
             }
-        )
-            .then(response => {return response.json()})
-            .then(json => {
-                if (common.dev.CONSOLE_DEBUG) console.log(`[REACT][LINK] Updating Count: ${json['id']} ${json['count']}`);
+        ).then(response => {
+            return response.json()
+        }).then(json => {
+            if (common.dev.CONSOLE_DEBUG) console.log(`[REACT][LINK] Updating Count: ${json['id']} ${json['count']}`);
                 setClickedAmount(json['count']);
-            });
+        }).catch(error => {
+                if (common.dev.CONSOLE_DEBUG) console.error(`[REACT][Link] ID GEN ERR: ${error}`);
+        });
 
         if (common.dev.CONSOLE_DEBUG) console.log('[REACT][LINK] Fetching API');
     }, [anchorId, clickedAmount]);
