@@ -38,13 +38,26 @@ function Link({href, message, openNewTab = false}) {
     // it should update in db
     // could be intensive ??
     useEffect(() => {
-        setClickedAmount(clickedAmount)
+
+        fetch(`http://${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/anchor/get-count`, 
+            {
+                method: 'POST',
+                headers: new Headers({'content-type': 'application/json'}),
+                body: JSON.stringify({id: anchorId, count: clickedAmount}),
+            }
+        )
+            .then(response => {return response.json()})
+            .then(json => {
+                if (common.dev.CONSOLE_DEBUG) console.log(`[REACT][LINK] Updating Count: ${json['id']} ${json['count']}`);
+                setClickedAmount(json['count']);
+            });
+
         if (common.dev.CONSOLE_DEBUG) console.log('[REACT][LINK] Fetching API');
-    }, [clickedAmount]);
+    }, [anchorId, clickedAmount]);
 
     return (
         <div className="link-holder">
-            <a id={anchorId} className='link underline' onClick={() => {setClickedAmount(clickedAmount + 1)}} href={href} data-clicks={clickedAmount} target={target} >{message}</a>
+            <a id={anchorId} className='link underline' onClick={() => {setClickedAmount(((+clickedAmount) + 1).toString())}} href={href} data-clicks={clickedAmount} target={target} >{message}</a>
         </div>
     )
 }
