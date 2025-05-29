@@ -1,14 +1,12 @@
 
-import Anchor from './Anchor.js';
-
 // CSS
 import './css/main.css';
 import './css/home.css';
 
-
 import logo from '../assests/logo3.png';
 
 function Home() {
+
   return (
     <div className="container">
       <div className='intro'>
@@ -31,7 +29,7 @@ function Home() {
 
       </div>
       <div>
-      
+        <br />
       </div>
       <div></div>
     </div>

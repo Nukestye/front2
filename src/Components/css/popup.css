@@ -1,0 +1,101 @@
+
+:root {
+    /* General properties */
+    --popup-border-radius: .5em;
+    --popup-primary-colour: #1e1e1e;
+    --popup-secondary-colour: #1e1e1e;
+
+    --popup-width: 20em;
+    --popup-height: 10em;
+    --popup-gap: 2em;
+
+    /* Button Properties */
+    --popup-btn-width: calc(6% + 2em);
+    --popup-btn-height: 3em;
+    --popup-btn-primary-colour: white;
+    --popup-btn-secondary-colour: var(--plum);
+}
+
+.popup-content[style*="visible"] {
+    animation: shake .5s, zoom-out .3s;
+    transition: .1s;
+}
+
+.popup {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.popup-content {
+    position: relative;
+    background-color: var(--popup-primary-colour);
+    border-radius: var(--popup-border-radius);
+    width: var(--popup-width);
+    height: var(--popup-height);
+    
+
+}
+
+.popup-message {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--popup-gap);
+}
+
+.popup-options {
+    display: flex;
+    justify-content: center;
+    gap: var(--popup-gap);
+}
+
+.popup-options > button {
+    width: var(--popup-btn-width);
+    height: var(--popup-btn-height);
+
+    background-color: var(--popup-btn-primary-colour);
+
+    border-radius: var(--popup-border-radius);
+    border: none;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.popup-options > button:hover {
+    background-color: var(--popup-btn-secondary-colour);
+    border-radius: var(--popup-border-radius);
+
+}
+
+@keyframes zoom-out {
+    0% {scale: 0.1;}
+    100% {scale: 1;}
+}
+
+@keyframes shake {
+    10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
