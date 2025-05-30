@@ -8,6 +8,10 @@ import linkedinLogo from './../assests/linkedin-30.png';
 import githubLogo from './../assests/GitHub_Invertocat_Light.png';
 import twitterLogo from './../assests/twitter-logo-white.png';
 
+import { FiUser } from 'react-icons/fi';
+
+import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai';
+
 function Footer() {
 
     const [version, setVersion] = useState('v1.0.0');
@@ -23,16 +27,25 @@ function Footer() {
         <div className="footer">
             <hr className="max-w" />
             <div className="content">
-                <div className="copyright" >gohar @ 2025</div>
-                <div className="social-buttons">
-                    <a href={common.prod.socials.github}>
-                        <img src={githubLogo} height={20} width={20} alt="github white logo"/>
+                <div className="copyright">
+
+                    gohar @ 2025
+                    </div>
+                <div className="social-buttons" target='_self'>
+                    <a href={'https://www.example.com/'}>
+                        <FiUser />
                     </a>
-                    <a href={common.prod.socials.linkedin}>
-                        <img src={linkedinLogo} height={20} width={20} alt="linkedin white logo"/>
+                    <a href={common.prod.socials.github} target='_blank' rel='external'>
+                        {/* <img src={githubLogo} height={20} width={20} alt="github white logo"/> */}
+                        <AiFillGithub />
                     </a>
-                    <a href={common.prod.socials.twitter}>
-                        <img src={twitterLogo} height={20} width={20} alt="twitter white logo"/>
+                    <a href={common.prod.socials.linkedin} target='_blank' rel='external'>
+                        {/* <img src={linkedinLogo} height={20} width={20} alt="linkedin white logo"/> */}
+                        <AiFillLinkedin />
+                    </a>
+                    <a href={common.prod.socials.twitter} target='_blank' rel='external'>
+                        {/* <img src={twitterLogo} height={20} width={20} alt="twitter white logo"/> */}
+                        <AiOutlineTwitter />
                     </a>
                 </div>
                 <div className="version" >
