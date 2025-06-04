@@ -31,7 +31,6 @@ function Home() {
       <div>
         <br />
       </div>
-      <div></div>
     </div>
   );
 }
