@@ -1,0 +1,81 @@
+:root {
+    --popup-notification-width: 400px;
+    --popup-notification-height: 80px;
+
+    --popup-notification-colour: black;
+    --popup-notification-text-colour: var(--white-green);
+}
+
+
+.popup-notifi {
+    display: flex;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+
+    margin-top: .5em;
+    margin-right: .7em;
+    padding: .2em;
+
+    width: var(--popup-notification-width);
+    height: var(--popup-notification-height);
+
+    animation: anim .4s;
+}
+
+.notification-content {
+    overflow: hidden;
+    width: var(--popup-notification-width);
+    height: var(--popup-notification-height);
+
+    background-color: var(--popup-notification-colour);
+    color: var(--popup-notification-text-colour);
+    border-radius: .3em;
+}
+
+.notifi-title-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.notifi-title {
+    padding-top: .2em;
+    padding-left: .3em;
+    font-weight: bold;
+}
+
+.notifi-close {
+    padding-top: .2em;
+    padding-right: .3em;
+    cursor: pointer;
+}
+
+.notifi-content {
+    padding: .2em;
+}
+
+.progressbar-holder {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 3px;
+    width: var(--popup-notification-width);
+    height: 10px;
+} 
+
+.notifi-progressbar {
+    height: 10px;
+    background-color: var(--plum);
+    transition: 0.4s linear;
+    border-radius: 0 .3em .3em .3em;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
