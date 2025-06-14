@@ -4,10 +4,6 @@ import './css/footer.css';
 
 import common from './../util/common.json';
 
-import linkedinLogo from './../assests/linkedin-30.png';
-import githubLogo from './../assests/GitHub_Invertocat_Light.png';
-import twitterLogo from './../assests/twitter-logo-white.png';
-
 import { FiUser } from 'react-icons/fi';
 
 import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai';
@@ -35,15 +31,15 @@ function Footer() {
                     <a href={'https://www.example.com/'}>
                         <FiUser />
                     </a>
-                    <a href={common.prod.socials.github} target='_blank' rel='external'>
+                    <a href={common.prod.socials.github} target='_blank' rel='external noreferrer'>
                         {/* <img src={githubLogo} height={20} width={20} alt="github white logo"/> */}
                         <AiFillGithub />
                     </a>
-                    <a href={common.prod.socials.linkedin} target='_blank' rel='external'>
+                    <a href={common.prod.socials.linkedin} target='_blank' rel='external noreferrer'>
                         {/* <img src={linkedinLogo} height={20} width={20} alt="linkedin white logo"/> */}
                         <AiFillLinkedin />
                     </a>
-                    <a href={common.prod.socials.twitter} target='_blank' rel='external'>
+                    <a href={common.prod.socials.twitter} target='_blank' rel='external noreferrer'>
                         {/* <img src={twitterLogo} height={20} width={20} alt="twitter white logo"/> */}
                         <AiOutlineTwitter />
                     </a>
