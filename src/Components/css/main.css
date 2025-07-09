@@ -5,11 +5,13 @@
     --plum: #AB81CD;
     --body-width: 90ch;
     --white-smoke: #EDE9EA;
+
+    --background-colour: #212121;
 }
 
 body, html {
     height: 100%;
-    background-color: #2A2B2A;
+    background-color: var(--background-colour);
     font-family: 'JetBrains Mono', sans-serif;
     margin: 0px;
     color: var(--white-green);
