@@ -1,0 +1,42 @@
+
+.javascript::after {
+    content: 'Javascript';
+    background-color: var(--project-lang-javascript-colour);
+    color: black;
+    padding: 0px 5px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.cpp::after {
+    content: 'C++';
+    padding: 0px 5px;
+    background-color: var(--project-lang-cpp-colour);
+    color: white;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.python::after {
+    content: 'Python';
+    background-color: var(--project-lang-python-colour);
+    color: white;
+    padding: 0px 5px;
+    border-radius: 20px;
+}
+
+.rust::after {
+    content: 'Rust';
+    background-color: var(--project-lang-rust-colour);
+    color: white;
+    padding: 0px 5px;
+    border-radius: 20px;
+}
+
+.html::after {
+    content: 'HTML';
+    background-color: var(--project-lang-html-colour);
+    color: white;
+    padding: 0px 5px;
+    border-radius: 20px;
+} 

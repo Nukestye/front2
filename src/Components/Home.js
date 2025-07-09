@@ -1,9 +1,9 @@
-
 // CSS
 import './css/main.css';
 import './css/home.css';
 
 import logo from '../assests/logo3.png';
+import ProjectList from './ProjectList';
 
 function Home() {
 
@@ -28,9 +28,8 @@ function Home() {
       <img src={logo} height={256} width={256} alt='cat shaped letter g'/>
 
       </div>
-      <div>
-        <br />
-      </div>
+        <h3>Projects</h3>
+        <ProjectList />
     </div>
   );
 }

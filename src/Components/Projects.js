@@ -1,8 +1,12 @@
-export default function Projects() {
+function Projects() {
+
 
     return (
         <div>
-            this is projects.
+            Project Page.
         </div>
     )
 }
+
+
+export default Projects;

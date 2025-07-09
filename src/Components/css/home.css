@@ -25,3 +25,10 @@
 .intro-text-end {
     margin: .2em;
 }
+
+.project-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+}
