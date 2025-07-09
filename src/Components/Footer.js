@@ -22,7 +22,7 @@ function Footer() {
     return (
         <div className="footer">
             <hr className="max-w" />
-            <div className="content">
+            <div className="footer-content">
                 <div className="copyright">
 
                     gohar @ 2025
