@@ -5,7 +5,12 @@ import './css/home.css';
 import logo from '../assests/logo3.png';
 import ProjectList from './ProjectList';
 
+import useTypewriter from '../hooks/useTypewriter';
+
 function Home() {
+
+  const roles = ['Software Engineer', 'Robotic Enthusiast']
+  const writer = useTypewriter(roles);
 
   return (
     <div className="container">
@@ -21,14 +26,14 @@ function Home() {
         </p>
 
         <p className='intro-text-end'>
-          a Software Engineer/Robotic enthusiast
+          a <span className='plum'>{writer}</span>
         </p>
       </div>
-
-      <img src={logo} height={256} width={256} alt='cat shaped letter g'/>
-
+        <img src={logo} height={256} width={256} alt='cat shaped letter g'/>
       </div>
         <h3>Projects</h3>
+        <ProjectList />
+        <h3>Blogs</h3>
         <ProjectList />
     </div>
   );

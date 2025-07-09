@@ -48,7 +48,7 @@ function ProjectList() {
                                     icon={project.icon_url}
                                 />);
 
-    if (list.length == 0) {list = (<div className="empty-project">There is nothing to see here... yet</div>)}
+    if (list.length === 0) {list = (<div className="empty-project">There is nothing to see here... yet</div>)}
 
     return (
         <div className="project-list">
