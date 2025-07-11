@@ -4,6 +4,7 @@ import './css/home.css';
 
 import logo from '../assests/logo3.png';
 import ProjectList from './ProjectList';
+import BlogList from './BlogList';
 
 import useTypewriter from '../hooks/useTypewriter';
 
@@ -32,8 +33,9 @@ function Home() {
         <img src={logo} height={256} width={256} alt='cat shaped letter g'/>
       </div>
         <h3>Projects</h3>
-        <ProjectList limit={2} />
+        <ProjectList limit={4} />
         <h3>Blogs</h3>
+        <BlogList limit={4}/>
     </div>
   );
 }

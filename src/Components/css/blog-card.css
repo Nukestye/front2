@@ -1,0 +1,18 @@
+:root {
+    --blog-card-width: calc(var(--body-width) - 95px);
+    --blog-card-height: 5vh;
+    --blog-card-min-w: 150px;
+    --blog-card-min-h: 70px;
+}
+
+.blog.card {
+    width: var(--blog-card-width);
+    height: var(--blog-card-height);
+
+    min-width: var(--blog-card-min-w);
+    min-height: var(--blog-card-min-h);
+
+    border: var(--plum) 1px solid;
+    border-radius: 7px;
+    cursor: pointer;
+}
