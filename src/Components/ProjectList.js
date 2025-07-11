@@ -4,7 +4,7 @@ import Project from "./Project";
 
 import common from './../util/common.json';
 
-function ProjectList() {
+function ProjectList({limit = 2, nolimit=false}) {
     
     /*
     -- IMPORTANT --
@@ -22,7 +22,43 @@ function ProjectList() {
     - icon_url: icon for the project, has a default
     */
 
-    let projectList = [];
+    let projectList = [
+        {
+            'id': 'asd',
+            'name': 'a project name',
+            'description': 'this isa desc',
+            'project_url': '/p/asd',
+            'repo_url': '/p/dsds',
+        },
+        {
+            'id': 'asd',
+            'name': 'a project name',
+            'description': 'this isa desc',
+            'project_url': '/p/asd',
+            'repo_url': '/p/dsds',
+        },
+        {
+            'id': 'asd',
+            'name': 'a project name',
+            'description': 'this isa desc',
+            'project_url': '/p/asd',
+            'repo_url': '/p/dsds',
+        },
+        {
+            'id': 'asd',
+            'name': 'a project name',
+            'description': 'this isa desc',
+            'project_url': '/p/asd',
+            'repo_url': '/p/dsds',
+        },
+        {
+            'id': 'asd',
+            'name': 'a project name',
+            'description': 'this isa desc',
+            'project_url': '/p/asd',
+            'repo_url': '/p/dsds',
+        },
+    ];
 
 
     useEffect(() => {
@@ -48,8 +84,13 @@ function ProjectList() {
                                     icon={project.icon_url}
                                 />);
 
-    if (list.length === 0) {list = (<div className="empty-project">There is nothing to see here... yet</div>)}
-
+    if (list.length === 0) {
+        list = (<div className="empty-project">There is nothing to see here... yet</div>)
+    }
+    else {
+        if (!nolimit) list = list.slice(0, limit);
+    } 
+        
     return (
         <div className="project-list">
             {list}
