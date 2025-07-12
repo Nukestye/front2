@@ -1,8 +1,10 @@
+import BlogList from './BlogList';
+
 export default function Blogs() {
 
     return (
         <div>
-            this is blogs.
+            <BlogList nolimit />
         </div>
     )
 }
