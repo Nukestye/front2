@@ -4,56 +4,9 @@ import './css/blog-card.css';
 
 function BlogList({limit=2, nolimit=false}) {
 
-    let bloglist = [
-        {
-            'id': 'asb',
-            'title': 'How am I alive?',
-            'url': '/b/asb',
-            'likes': 100,
-            'comments': 10,
-            'views': 0
-        },
-            {
-            'id': 'asb',
-            'title': 'How am I alive?',
-            'url': '/b/asb',
-            'likes': 100,
-            'comments': 10,
-            'views': 0
-        },
-        {
-            'id': 'asb',
-            'title': 'How am I alive?',
-            'url': '/b/asb',
-            'likes': 100,
-            'comments': 10,
-            'views': 0
-        },
-                {
-            'id': 'asb',
-            'title': 'How am I alive?',
-            'url': '/b/asb',
-            'likes': 100,
-            'comments': 10,
-            'views': 0
-        },
-            {
-            'id': 'asb',
-            'title': 'How am I alive?',
-            'url': '/b/asb',
-            'likes': 100,
-            'comments': 10,
-            'views': 0
-        },
-        {
-            'id': 'asb',
-            'title': 'How am I alive?',
-            'url': '/b/asb',
-            'likes': 100,
-            'comments': 10,
-            'views': 0
-        },
-    ];
+
+    // TODO: Backend support to get list of all blogs
+    let bloglist = [];
 
 
     let list = Array

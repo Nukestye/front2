@@ -5,6 +5,7 @@
     --blog-card-min-h: 60px;
 
     --blog-card-bg-colour: #2a2a2a;
+    --blog-card-bg-h-colour: grey;
 
     --tag-bg-colour: #786F80;
 }
@@ -18,7 +19,7 @@
 
     background-color: var(--blog-card-bg-colour);
 
-    /* border: var(--plum) 1px solid; */
+
     border-radius: 7px; 
     cursor: pointer;
 
@@ -27,14 +28,15 @@
 
 .blog.card:hover {
     transform: scale(1.01);
-    transform: translate(-5px, -5px);
+    border: 1px solid white !important;
 }
 
 .blog-content {
     display: flex;
+    height: 100%;
     position: relative;
     flex-direction: column;
-    padding: 10px;
+    margin: 0px 10px;
     justify-content: center;
 }
 
@@ -125,6 +127,8 @@
   left: 0;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 .hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
   -webkit-animation-name: hvr-ripple-out;

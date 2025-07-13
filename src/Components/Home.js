@@ -33,9 +33,9 @@ function Home() {
         <img src={logo} height={256} width={256} alt='cat shaped letter g'/>
       </div>
         <h3>Projects</h3>
-        <ProjectList limit={4} />
+        <ProjectList limit={2} />
         <h3>Blogs</h3>
-        <BlogList limit={4}/>
+        <BlogList limit={3}/>
     </div>
   );
 }

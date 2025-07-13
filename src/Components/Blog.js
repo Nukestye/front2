@@ -14,13 +14,15 @@ function Blog({
     views
 }) {
 
+    // TODO: make likes interactable
+
     let tags = ['Java', 'Limitless', 'Eye'];
     let tagCode = Array
                     .from(tags)
                     .map(tag => <span className="tag" data-tag={tag}></span>);
 
     return (
-        <div className="blog card boxshadow hvr-ripple-out">
+        <div id={id} className="blog card hvr-ripple-out">
             <div className="blog-content">
                 <div className="blog-title">
                     <a href={url}>{title}</a>
