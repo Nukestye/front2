@@ -1,0 +1,136 @@
+:root {
+    --blog-card-width: 700px;
+    --blog-card-height: 80px;
+    --blog-card-min-w: 140px;
+    --blog-card-min-h: 60px;
+
+    --blog-card-bg-colour: #2a2a2a;
+    --blog-card-bg-h-colour: grey;
+
+    --tag-bg-colour: #786F80;
+}
+
+.blog.card {
+    width: var(--blog-card-width);
+    height: var(--blog-card-height);
+
+    min-width: var(--blog-card-min-w);
+    min-height: var(--blog-card-min-h);
+
+    background-color: var(--blog-card-bg-colour);
+
+
+    border-radius: 7px; 
+    cursor: pointer;
+
+    transition: 0.1s ease-in-out;
+}
+
+.blog.card:hover {
+    transform: scale(1.01);
+    border: 1px solid white !important;
+}
+
+.blog-content {
+    display: flex;
+    height: 100%;
+    position: relative;
+    flex-direction: column;
+    margin: 0px 10px;
+    justify-content: center;
+}
+
+.blog-attr {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    gap: 1em;
+    flex-shrink: 0;
+}
+
+.blog-attr > span {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.tags {
+    display: flex;
+    gap: 0.2em;
+    margin-top: 2px;
+}
+
+.tag::after {
+    content: attr(data-tag);
+    background-color: var(--tag-bg-colour);
+    opacity: 0.5;
+    border: 1px solid var(--tag-bg-colour);
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 10px;
+}
+
+/* Ripple In */
+@-webkit-keyframes hvr-ripple-in {
+  100% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes hvr-ripple-in {
+  100% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+}
+/* Ripple Out */
+@-webkit-keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+.hvr-ripple-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+}
+.hvr-ripple-out:before {
+  content: '';
+  position: absolute;
+  border: var(--plum) solid 1px;
+  border-radius: 7px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
+  -webkit-animation-name: hvr-ripple-out;
+  animation-name: hvr-ripple-out;
+}

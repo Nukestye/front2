@@ -32,3 +32,11 @@
     flex-wrap: wrap;
     gap: 1em;
 }
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1em;
+    align-items: center;
+}

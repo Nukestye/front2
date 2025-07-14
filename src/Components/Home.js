@@ -4,6 +4,7 @@ import './css/home.css';
 
 import logo from '../assests/logo3.png';
 import ProjectList from './ProjectList';
+import BlogList from './BlogList';
 
 import useTypewriter from '../hooks/useTypewriter';
 
@@ -34,6 +35,7 @@ function Home() {
         <h3>Projects</h3>
         <ProjectList limit={2} />
         <h3>Blogs</h3>
+        <BlogList limit={3}/>
     </div>
   );
 }
