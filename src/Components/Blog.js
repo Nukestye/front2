@@ -23,9 +23,10 @@ function Blog({
 
     return (
         <div id={id} className="blog card hvr-ripple-out">
+            <a className='blog-link' href={`/b/${id}`} />
             <div className="blog-content">
                 <div className="blog-title">
-                    <a href={url}>{title}</a>
+                    <a href={`/b/${id}`}>{title}</a>
                 </div>
                 <div className="tags">
                     {tagCode}

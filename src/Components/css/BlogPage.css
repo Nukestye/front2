@@ -1,0 +1,47 @@
+.blog.container {
+    margin: 0em 1em;
+    max-width: var(--body-width);
+    height: fit-content;
+}
+
+
+.blog.title {
+    position: relative;
+   font-size: 32px;
+   margin: 10px 10px 50px 5px;
+   font-weight: bold;
+}
+
+.blog.stats {
+    display: flex;
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    right: 10px;
+    gap: 1em;
+    flex-shrink: 0;
+}
+
+.blog.stats > span {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.blog.content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: justify;
+    scrollbar-color: var(--plum) transparent;
+    scrollbar-width: thin;
+}
+
+.blog.footer {
+    margin: 20px 0px;
+}
+
+code {
+    background-color: black;
+    color: green;
+    padding: 2px;
+}
