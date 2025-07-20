@@ -1,9 +1,12 @@
+import ProjectList from "./ProjectList";
+
+import './css/projects.css';
+
 function Projects() {
 
-
     return (
-        <div>
-            Project Page.
+        <div className='project-page'>
+            <ProjectList nolimit />
         </div>
     )
 }

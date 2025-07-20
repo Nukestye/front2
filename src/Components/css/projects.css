@@ -1,0 +1,18 @@
+.project-page {
+    margin: 10px;
+    padding: 15px 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-color: var(--plum) transparent;
+    scrollbar-width: thin;
+}
+
+.project-page > .project-list {
+    gap: 1em;
+}
+
+.project-page  .project.card {
+    min-width: 24em;
+    min-height: 73px;
+}
