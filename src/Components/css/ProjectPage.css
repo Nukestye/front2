@@ -1,0 +1,17 @@
+.project.name {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.project.description {
+    font-size: 14px;
+}
+
+.project.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project.version > .number {
+    color: var(--plum);
+}
