@@ -1,13 +1,13 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
-import Home from './Components/Home.js';
-import Layout from './Components/Layout.js';
+import Home from './Components/Home.jsx';
+import Layout from './Components/Layout.jsx';
 
-import Projects from './Components/Projects.js';
-import Blogs from './Components/Blogs.js';
-import Error from './Components/Error.js';
-import BlogPage from './Components/BlogPage.js';
+import Projects from './Components/Projects.jsx';
+import Blogs from './Components/Blogs.jsx';
+import Error from './Components/Error.jsx';
+import BlogPage from './Components/BlogPage.jsx';
 import ProjectPage from './Components/ProjectPage.jsx';
 
 
