@@ -28,7 +28,7 @@ function Footer() {
                     gohar @ 2025
                     </div>
                 <div className="social-buttons" target='_self'>
-                    <a href={'https://www.example.com/'}>
+                    <a href={'/login'}>
                         <FiUser />
                     </a>
                     <a href={common.prod.socials.github} target='_blank' rel='external noreferrer'>

@@ -1,15 +1,16 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
-import Home from './Components/Home.jsx';
 import Layout from './Components/Layout.jsx';
+import Home from './Components/Home.jsx';
 
+import ProjectPage from './Components/ProjectPage.jsx';
 import Projects from './Components/Projects.jsx';
+import BlogPage from './Components/BlogPage.jsx';
 import Blogs from './Components/Blogs.jsx';
 import Error from './Components/Error.jsx';
-import BlogPage from './Components/BlogPage.jsx';
-import ProjectPage from './Components/ProjectPage.jsx';
-
+import Login from './Components/Login.jsx';
+import { StrictMode } from 'react';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       {path: 'blogs', Component: Blogs},
       {path: 'b', element: <Navigate to="/blogs" replace />},
       {path: 'b/:id', Component: BlogPage},
+      {path: '/login', Component: Login},
       {path: 'Not-Found', Component: Error},
       {path: '*', Component: Error},
     ]    
@@ -30,5 +32,7 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={router} />
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>
 );
