@@ -17,6 +17,7 @@ const router = createBrowserRouter([
     Component: Layout,
     children: [
       {index: true, Component: Home},
+      {path: '/back', Component: Home},
       {path: 'projects', Component: Projects},
       {path: 'p', element: <Navigate to="/projects" replace />},
       {path: 'p/:id', Component: ProjectPage},

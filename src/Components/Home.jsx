@@ -7,8 +7,11 @@ import ProjectList from './ProjectList';
 import BlogList from './BlogList';
 
 import useTypewriter from '../hooks/useTypewriter';
+import { useParams } from 'react-router-dom';
 
 function Home() {
+
+  const param = useParams();
 
   const roles = ['Software Engineer', 'Robotic Enthusiast']
   const writer = useTypewriter(roles);

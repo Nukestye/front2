@@ -2,6 +2,7 @@ import React, {useState, useEffect, Fragment} from "react";
 import { createPortal } from "react-dom";
 
 import common from '../util/common.json';
+import { useNavigate } from "react-router-dom";
 
 function Login() {
 
@@ -13,6 +14,13 @@ function Login() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const logged_in = localStorage.getItem('is_logged');
+
+        if (logged_in === 'yes') navigate('/back');
+    }, [navigate])
 
     const handleChange = (e) => {
         console.log(e.target);
@@ -26,7 +34,8 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        
+        setLoading(true);
         const { REACT_APP_BACKEND_URL, REACT_APP_BACKEND_PORT } = process.env;
 
         fetch(`http://${REACT_APP_BACKEND_URL}:${REACT_APP_BACKEND_PORT}/auth`, {
@@ -36,26 +45,22 @@ function Login() {
         })
         .then((response) => {return response.json()})
         .then((json) => {
-            console.log(json);
 
             // 401 is ambiguous to prevent knowing what is correct/uncorrect
             if (json['status'] == 401) setError('username or password is incorrect.');
 
-            localStorage.setItem('userId', ['userId']);
+            localStorage.setItem('userId', json['userId']);
             localStorage.setItem('is_logged', 'yes');
             localStorage.setItem('token', json['token']);
+
+            // Sent user back to homepage
+            navigate('/');
+            setLoading(false);
         })
         .catch((error) => {
            if (common.dev.CONSOLE_DEBUG) console.error(error);
+           setLoading(false);
         })
-
-        setLoading(true);
-        try {
-            
-            setLoading(false);
-        } catch (err) {
-            setLoading(false);
-        }
     }
 
     return (
@@ -76,7 +81,9 @@ function Login() {
                 <button type="submit" onClick={handleSubmit} >Submit</button>
             </form>
 
-            {error}
+            <div className="login error">
+                {error}
+            </div>
         </div>
     )
 }
