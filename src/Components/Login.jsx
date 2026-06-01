@@ -47,7 +47,7 @@ function Login() {
         .then((json) => {
 
             // 401 is ambiguous to prevent knowing what is correct/uncorrect
-            if (json['status'] == 401) setError('username or password is incorrect.');
+            if (json['status'] === 401) setError('username or password is incorrect.');
 
             localStorage.setItem('userId', json['userId']);
             localStorage.setItem('is_logged', 'yes');

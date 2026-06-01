@@ -34,7 +34,7 @@ function BlogPage({pId}) {
     const [views, setViews] = useState(0);
     const [likes, setLikes] = useState(0);
     const [numComments, setNumberOfComments] = useState(0);
-    const [comments, setComments] = useState();
+    // const [comments, setComments] = useState();
 
     // TODO:
     //      Footer design to separate the comments and the content
@@ -53,7 +53,7 @@ function BlogPage({pId}) {
         .then((response) => {return response.json()})
         .then(json => {
 
-            if (json['status'] != 200) throw Error('Unknown error occured');
+            if (json['status'] !== 200) throw Error('Unknown error occured');
 
             setTitle(json['data']['title']);
             setContent(json['data']['content']);

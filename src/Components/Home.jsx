@@ -13,7 +13,7 @@ function Home() {
 
   const param = useParams();
 
-  const roles = ['Software Engineer', 'Robotic Enthusiast']
+  const roles = ['Robotics Engineer', 'MSc Robotics | KCL', 'Control Systems', 'Computer Vision', 'ROS2 Developer']
   const writer = useTypewriter(roles);
 
   return (

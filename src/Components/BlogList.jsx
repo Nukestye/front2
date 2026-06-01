@@ -23,7 +23,7 @@ function BlogList({limit=2, nolimit=false}) {
         
             .then((response) => {return response.json()})
             .then((json) => {
-                if (json['status'] != 200) throw Error('Unknown error occured');
+                if (json['status'] !== 200) throw Error('Unknown error occured');
 
                 setBlogs(json['blogs']);
                 setLoading(false);
