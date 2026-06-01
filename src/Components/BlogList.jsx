@@ -17,9 +17,9 @@ function BlogList({limit=2, nolimit=false}) {
 
     useEffect(() => {
         setLoading(true);
-        const {REACT_APP_BACKEND_URL, REACT_APP_BACKEND_PORT} = process.env;
+        const { REACT_APP_BACKEND_URL } = process.env;
 
-        fetch(`http://${REACT_APP_BACKEND_URL}:${REACT_APP_BACKEND_PORT}/blogs/`)
+        fetch(`${REACT_APP_BACKEND_URL}/blogs/`)
         
             .then((response) => {return response.json()})
             .then((json) => {

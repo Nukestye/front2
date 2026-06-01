@@ -28,9 +28,9 @@ function ProjectPage({pId}) {
 
     useEffect(() => {
         setLoading(true);
-        const {REACT_APP_BACKEND_URL, REACT_APP_BACKEND_PORT} = process.env;
+        const { REACT_APP_BACKEND_URL } = process.env;
 
-        fetch(`http://${REACT_APP_BACKEND_URL}:${REACT_APP_BACKEND_PORT}/projects/get-project`, {
+        fetch(`${REACT_APP_BACKEND_URL}/projects/get-project`, {
             method: 'POST',
             headers: new Headers({'content-type': 'application/json'}),
             body: JSON.stringify({projectId: id})

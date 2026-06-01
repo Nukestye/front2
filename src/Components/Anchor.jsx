@@ -9,8 +9,10 @@ function Link({href, message, openNewTab = false}) {
     const [clickedAmount, setClickedAmount] = useState('0');
     const [anchorId, setAnchorID] = useState('');
 
+    const { REACT_APP_BACKEND_URL } = process.env;
+
     useEffect(() => {
-        fetch(`https://${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/anchor/create-id`, 
+        fetch(`${REACT_APP_BACKEND_URL}/anchor/create-id`, 
             {
                 method: 'POST',
                 headers: new Headers({'content-type': 'application/json'}),
@@ -35,7 +37,7 @@ function Link({href, message, openNewTab = false}) {
 
     useEffect(() => {
 
-        fetch(`https://${process.env.REACT_APP_BACKEND_URL}:${process.env.REACT_APP_BACKEND_PORT}/anchor/get-count`, 
+        fetch(`${REACT_APP_BACKEND_URL}/anchor/get-count`, 
             {
                 method: 'POST',
                 headers: new Headers({'content-type': 'application/json'}),

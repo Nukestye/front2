@@ -25,9 +25,9 @@ function ProjectList({limit = 2, nolimit=false}) {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        const {REACT_APP_BACKEND_URL, REACT_APP_BACKEND_PORT} = process.env;
+        const { REACT_APP_BACKEND_URL } = process.env;
 
-        fetch(`http://${REACT_APP_BACKEND_URL}:${REACT_APP_BACKEND_PORT}/projects/`)
+        fetch(`${REACT_APP_BACKEND_URL}/projects/`)
             .then((response) => {return response.json()})
             .then ((json) => {
                 if (json['status'] !== 200) throw Error('Unknown error occured');
