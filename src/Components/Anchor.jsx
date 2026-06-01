@@ -12,7 +12,7 @@ function Link({href, message, openNewTab = false}) {
     const { REACT_APP_BACKEND_URL } = process.env;
 
     useEffect(() => {
-        fetch(`${REACT_APP_BACKEND_URL}/anchor/create-id`, 
+        fetch(`${REACT_APP_BACKEND_URL}/api/anchor/create-id`, 
             {
                 method: 'POST',
                 headers: new Headers({'content-type': 'application/json'}),

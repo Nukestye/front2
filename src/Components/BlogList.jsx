@@ -19,7 +19,7 @@ function BlogList({limit=2, nolimit=false}) {
         setLoading(true);
         const { REACT_APP_BACKEND_URL } = process.env;
 
-        fetch(`${REACT_APP_BACKEND_URL}/blogs/`)
+        fetch(`${REACT_APP_BACKEND_URL}/api/blogs/`)
         
             .then((response) => {return response.json()})
             .then((json) => {
