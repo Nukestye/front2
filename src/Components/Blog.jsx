@@ -23,9 +23,11 @@ function Blog({
 
     return (
         <div id={id} className="blog card hvr-ripple-out">
-            <a className='blog-link' href={`/b/${id}`} />
+            {/* eslint-disable-next-line */}
+            <a className='blog-link' href={`/b/${id}`} alt='blog link' />
             <div className="blog-content">
                 <div className="blog-title">
+                    {/* eslint-disable-next-line */}
                     <a href={`/b/${id}`} alt='blog link'>{title}</a>
                 </div>
                 <div className="tags">
