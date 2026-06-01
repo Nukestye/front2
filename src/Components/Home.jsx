@@ -7,11 +7,12 @@ import ProjectList from './ProjectList';
 import BlogList from './BlogList';
 
 import useTypewriter from '../hooks/useTypewriter';
-import { useParams } from 'react-router-dom';
+
+// import { useParams } from 'react-router-dom';
 
 function Home() {
 
-  const param = useParams();
+  // const param = useParams();
 
   const roles = ['Robotics Engineer', 'MSc Robotics | KCL', 'Control Systems', 'Computer Vision', 'ROS2 Developer']
   const writer = useTypewriter(roles);

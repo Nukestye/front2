@@ -20,7 +20,7 @@ function Project({
 
     return (
         <div id={id} className='project card boxshadow'>
-            <a className='project-link' href={`/p/${id}`} />
+            <a className='project-link' href={`/p/${id}`} alt='project link' />
             {img}
             <div className='project-info'>
                 <div className='project-title'>

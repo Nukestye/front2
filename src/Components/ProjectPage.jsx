@@ -1,6 +1,6 @@
 
 import { Fragment, useEffect, useState } from "react";
-import { redirect, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { createPortal } from "react-dom";
 
 import './css/ProjectPage.css';

@@ -41,10 +41,12 @@ function BlogPage({pId}) {
     //      Comments 
     //      Backend support to get both the comments and content
 
-    const { REACT_APP_BACKEND_URL } = process.env;
-
+    
     useEffect(() => {
         setLoading(true);
+
+        const { REACT_APP_BACKEND_URL } = process.env;
+
         fetch(`${REACT_APP_BACKEND_URL}/blogs/get-single-blog`, {
             method: 'POST',
             headers: new Headers({'content-type': 'application/json'}),

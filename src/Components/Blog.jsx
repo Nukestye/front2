@@ -26,7 +26,7 @@ function Blog({
             <a className='blog-link' href={`/b/${id}`} />
             <div className="blog-content">
                 <div className="blog-title">
-                    <a href={`/b/${id}`}>{title}</a>
+                    <a href={`/b/${id}`} alt='blog link'>{title}</a>
                 </div>
                 <div className="tags">
                     {tagCode}
