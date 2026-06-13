@@ -13,13 +13,13 @@ function Project({
 }) {
 
     let img = '';
-    if (typeof icon === 'undefined' || icon === '')
+    if (typeof icon === 'undefined' || icon === '' || icon === null)
         img = (<IconContext.Provider value={{size: '40px'}}><DiCode className='icon'/></IconContext.Provider>)
     else 
         img = (<img className='icon' src={icon} width={'40px'} height={'40px'} alt='project logo'/>)
 
     return (
-        <div id={id} className='project card boxshadow'>
+        <div id={id} className='project card boxshadow' >
             {/* eslint-disable-next-line */}
             <a className='project-link' href={`/p/${id}`} alt='project link' />
             {img}
