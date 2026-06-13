@@ -50,7 +50,6 @@ function BlogPage({pId}) {
         fetch(`${REACT_APP_BACKEND_URL}/blogs/${id}`, {
             method: 'GET',
             headers: new Headers({'content-type': 'application/json'}),
-            body: JSON.stringify({blogId: id}),
         })
         .then((response) => {return response.json()})
         .then(json => {

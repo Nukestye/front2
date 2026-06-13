@@ -32,8 +32,7 @@ function ProjectPage({pId}) {
 
         fetch(`${REACT_APP_BACKEND_URL}/api/projects/${id}`, {
             method: 'GET',
-            headers: new Headers({'content-type': 'application/json'}),
-            body: JSON.stringify({projectId: id})
+            headers: new Headers({'content-type': 'application/json'})
         })
             .then((response) => {return response.json()})
             .then((json) => {
