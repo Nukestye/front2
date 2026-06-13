@@ -47,8 +47,8 @@ function BlogPage({pId}) {
 
         const { REACT_APP_BACKEND_URL } = process.env;
 
-        fetch(`${REACT_APP_BACKEND_URL}/blogs/get-single-blog`, {
-            method: 'POST',
+        fetch(`${REACT_APP_BACKEND_URL}/blogs/${id}`, {
+            method: 'GET',
             headers: new Headers({'content-type': 'application/json'}),
             body: JSON.stringify({blogId: id}),
         })

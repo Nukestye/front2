@@ -31,7 +31,7 @@ function ProjectPage({pId}) {
         const { REACT_APP_BACKEND_URL } = process.env;
 
         fetch(`${REACT_APP_BACKEND_URL}/api/projects/${id}`, {
-            method: 'POST',
+            method: 'GET',
             headers: new Headers({'content-type': 'application/json'}),
             body: JSON.stringify({projectId: id})
         })
