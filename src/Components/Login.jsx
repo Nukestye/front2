@@ -36,9 +36,9 @@ function Login() {
         e.preventDefault();
         
         setLoading(true);
-        const { REACT_APP_BACKEND_URL } = process.env;
+        const { VITE_APP_BACKEND_URL } = process.env;
 
-        fetch(`${REACT_APP_BACKEND_URL}/auth`, {
+        fetch(`${VITE_APP_BACKEND_URL}/auth`, {
             method: 'POST',
             headers: new Headers({'content-type': 'application/json'}),
             body: JSON.stringify(formData),

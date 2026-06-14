@@ -3,8 +3,8 @@ import './css/main.css';
 import './css/home.css';
 
 import logo from '../assests/logo3.png';
-import ProjectList from './ProjectList';
-import BlogList from './BlogList';
+import ProjectList from './Projects/ProjectList';
+import BlogList from './Blogs/BlogList';
 
 import useTypewriter from '../hooks/useTypewriter';
 
