@@ -28,7 +28,10 @@ function ProjectPage({pId}) {
 
     useEffect(() => {
         setLoading(true);
-        const { VITE_APP_BACKEND_URL } = process.env;
+        const { VITE_APP_BACKEND_URL } = import.meta.env;
+        
+        console.log(VITE_APP_BACKEND_URL);
+        console.log(id);
 
         fetch(`${VITE_APP_BACKEND_URL}/api/projects/${id}`, {
             method: 'GET',
@@ -41,7 +44,7 @@ function ProjectPage({pId}) {
                 console.log(json['data']['repo']);
 
                 // redirect to repo
-                // window.location.href = json['data']['repo'];
+                window.location.href = json['data']['repo'];
 
                 setProject(json['data']);
                 setLoaded(true);
