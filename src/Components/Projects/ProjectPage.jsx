@@ -3,6 +3,12 @@ import { Fragment, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { createPortal } from "react-dom";
 
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm'
+import rehypeReact from 'rehype-react'
+import remarkHtml from 'remark-html'
+import rehypeRaw from 'rehype-raw'
+
 import '../css/ProjectPage.css';
 
 import common from '../../util/common.json';
@@ -11,10 +17,12 @@ function ProjectPage({pId}) {
 
     let {id} = useParams();
 
-    const [project, setProject] = useState();
+    const [project, setProject] = useState({});
+    const [readmeContent, setReadmeContent] = useState();
 
     const [loading, setLoading] = useState(false);
     const [loaded, setLoaded] = useState(false);
+
 
     const navigate = useNavigate();
 
@@ -29,9 +37,6 @@ function ProjectPage({pId}) {
     useEffect(() => {
         setLoading(true);
         const { VITE_APP_BACKEND_URL } = import.meta.env;
-        
-        console.log(VITE_APP_BACKEND_URL);
-        console.log(id);
 
         fetch(`${VITE_APP_BACKEND_URL}/api/projects/${id}`, {
             method: 'GET',
@@ -41,7 +46,6 @@ function ProjectPage({pId}) {
             .then((json) => {
                 if (json['status'] === 404) navigate('/Not-Found');
                 else if (json['status'] !== 200) throw Error('Unknown error occurred');
-                console.log(json['data']['repo']);
 
                 // redirect to repo
                 window.location.href = json['data']['repo'];
@@ -59,9 +63,21 @@ function ProjectPage({pId}) {
     }, [id, navigate])
 
 
+
+    useEffect(() => {
+        if (!('readme' in project)) return;
+
+        fetch(project['readme'])
+            .then((response) => { return response.text()})
+            .then((json) => {
+                setReadmeContent(json);
+            })
+
+    }, [project])
+
     return (loaded ? 
         <div className="project">
-            <pre>{JSON.stringify(project, null, 4)}</pre>
+            {/* <pre>{JSON.stringify(project, null, 4)}</pre> */}
             {loading ? createPortal(
                 <Fragment>
                     <div className='popup'>
@@ -69,7 +85,26 @@ function ProjectPage({pId}) {
                     </div>
                 </Fragment>, document.body
                 ) : null}
-            {/* Wait till the project is loaded before displaying content */}       
+            {/* Wait till the project is loaded before displaying content */}
+            <a href="/projects" referrerPolicy="no-referrer" target="_self"> &lt;- back to projects</a>
+            <h1 className="name">{project['name']}</h1>
+            <p className="description">{project['description']}</p>
+            <div className="info">
+                <span className="plum">{project['stage']} </span>
+                -
+                <span> v{project['version']} </span>
+                -
+                <span> {project['views']}</span>
+            </div>
+
+            <h2>README</h2>
+            <br />
+            <Markdown 
+                remarkPlugins={[remarkGfm, remarkHtml]}
+                rehypePlugins={[rehypeRaw, rehypeReact]}
+            >
+                {readmeContent}
+            </Markdown>
         </div>
     : null)
 }

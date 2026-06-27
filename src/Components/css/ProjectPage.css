@@ -1,10 +1,30 @@
+:root {
+    --project-title-size: 32px;
+    --project-description-size: 18px;
+}
+
+.name {
+    font-size: var(--project-title-size)
+}
+
+.description {
+    font-size: var(--project-description-size);
+    color: grey;
+}
+
+.info {
+    font-size: 12px
+}
+
+
 .project.name {
     font-size: 32px;
     font-weight: bold;
 }
 
 .project.description {
-    font-size: 14px;
+    font-size: 16px;
+    color: grey;
 }
 
 .project.title {
@@ -15,3 +35,4 @@
 .project.version > .number {
     color: var(--plum);
 }
+

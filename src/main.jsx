@@ -20,7 +20,6 @@ const router = createBrowserRouter([
       {path: '/back', Component: Home},
       {path: 'projects', Component: Projects},
       {path: 'p', element: <Navigate to="/projects" replace />},
-      {path: 'p/:id', Component: ProjectPage},
       {path: 'blogs', Component: Blogs},
       {path: 'b', element: <Navigate to="/blogs" replace />},
       {path: 'b/:id', Component: BlogPage},
@@ -29,6 +28,9 @@ const router = createBrowserRouter([
       {path: '*', Component: Error},
     ]    
   },
+  {
+      path: 'p/:id', Component: ProjectPage,
+  }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
